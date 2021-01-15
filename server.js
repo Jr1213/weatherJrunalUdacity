@@ -1,7 +1,5 @@
 // object holding all the data form the frontend
-let projectData  = {};
-// openWeatherMapApi key 
-const apiKey = '';
+let projectData  = [];
 // requireing express framework
 const express = require('express');
 // make new instans from express
@@ -32,5 +30,11 @@ const server = app.listen(port, () => {
 // routes
 app.get('/allData', (req, res)=>{
     res.send(projectData)
+    console.log(projectData);
 })
 
+app.post('/comingData',(req, res)=>{
+    projectData = req.body
+    console.log(req.body)
+    console.log(projectData);
+})
